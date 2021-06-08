@@ -160,6 +160,20 @@ Mat EspacioColor::negadaDeFrame(Mat frame){
     return negada;
 }
 
+Mat EspacioColor::colocarFondoPantallaSobreCamara(Mat negada, Mat fondo, Mat frame){
+    Mat fondoConCamara = fondo;
+    for(int i=0;i<negada.rows;i++){
+        for(int j=0;j<negada.cols;j++){
+            if((int)negada.at<uchar>(i,j) == 255) {
+                fondoConCamara.at<Vec3b>(i,j) = fondo.at<Vec3b>(i,j);
+            }else{
+                fondoConCamara.at<Vec3b>(i,j) = frame.at<Vec3b>(i,j);
+            }
+        }
+    }
+    return fondoConCamara;
+}
+
 Mat EspacioColor::colocarFondoFrameSobreCamara(Mat umbralizada, Mat negada, Mat frame, Mat fondo){
     //Vectores tridimensionales para sobremontar imagen sobre videos
     Vec3b voxel;

@@ -310,8 +310,8 @@ int main(int argc, char *argv[]){
                     }
 
                     negada = espacioColorProyecto.negadaDeFrame(umbralizada);
-                    fondo = espacioColorProyecto.colocarFondoFrameSobreCamara(umbralizada, negada, frame, fondo);
-                   
+                    //fondo = espacioColorProyecto.colocarFondoFrameSobreCamara(umbralizada, negada, frame, fondo);
+                    fondo = espacioColorProyecto.colocarFondoPantallaSobreCamara(negada, fondo, frame);
                     //cv::imshow("Video Original", frameSinNada);
                     cv::imshow("Video sin fondo", frame);
                     //cv::imshow("Umbralizada", umbralizada);

@@ -57,7 +57,8 @@ public:
 
     //Funcion para colocar fondo dentro de una imagen
     Mat colocarFondoFrameSobreCamara(Mat umbralizada, Mat negada, Mat frame, Mat fondo);
-
+    Mat colocarFondoPantallaSobreCamara(Mat negada, Mat fondo, Mat frame);
+    
     int getMinCanal1() const{ return minCanal1;};
     int getMinCanal2() const{ return minCanal2;};
     int getMinCanal3() const{ return minCanal3;};
